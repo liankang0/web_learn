@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标签选择器{样式} */
+        p { 
+            color: red;
+            font-size: 60px;
+        }
+        div {
+            color: pink;
+            font-size: 30px;
+        }
+        /* 类选择器*/
+        .green {
+            color: green;
+        }
+        .red {
+            width: 60px;
+            height: 50px;
+            background-color: blue;
+        }
+        /* 多类名，之间要用空格来隔开，效果叠加, 使用公共属性*/
+        /*id选择器, 只能调用一次，id只能有一个*/
+        #pink {
+            color: pink;
+        }
+        /* 通配符选择器*/
+        * {
+            color: indigo;
+        }
+        /* 文字属性*/
+        h2 {
+            font-weight: 400;
+            font-family: 'Microsoft YaHei';
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        /*标题比较特殊，需要单独制定大小*/
+        em {
+            font-style: normal; /*倾斜字体不倾斜*/
+        }
+        .fuhe {
+            font: italic 700 16tx '微软雅黑';
+            /*必须要按顺序， 必须有size， family*/
+            /*字体属性：
+                size
+                family
+                weight
+                style
+                font */
+        }
+
+         /*文本颜色,十六进制 直接选择，rgb*/
+        .yanse {
+            color: #1fa366;
+        }
+        /*文本对齐*/
+        .duiqi {
+            text-align: center;/*left right center*/
+        }
+        /*装饰文本*/
+        .zhuangshi {
+            text-decoration: underline;
+            /*text-decoration: none 取消装饰*/ 
+        }
+        /*首行缩进*/
+        p {
+            /* text-indent: 20px; */
+            text-indent: 2em;
+            /* 缩进两个字的距离 */
+        }
+        /* 行间距 */
+        p {
+            line-height: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="zhuangshi">测试装饰文本</p>
+    <p class="duiqi">对齐测试</p>
+    <p class="yanse">测试颜色</p>
+    <div class="fuhe">三生三世十里桃花，一心一意百行代码</div>
+    <p>同学上课时的你</p>
+    <em>下课时的你</em>
+    <h1>这是标题</h1>
+    <h2>pink的秘密</h2>
+    <p>有点意思</p>
+    <p class="red">有点意思</p>
+    <p>有点意思</p>
+    <div class="green">没有一意思</div>
+    <div>没有一意思</div>
+    <div>没有一意思</div>
+    <div>没有一意思</div></body>
+    <ul>
+        <li class="green">小李</li>
+        <li class="red green">小黄</li>
+        <li id="pink">小陈</li>
+        <li>小亲</li>
+    </ul>
+</body>
+</html>

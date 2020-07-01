@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         /* 块级盒子水平居中 */
+         /* div {
+             width: 900px;
+             height: 200px;
+             background-color: pink;
+             margin: 100px auto;
+             text-align: center;
+         } */
+
+         /* 让行内块元素，水平居中 ：找他的父元素，加text-align : center */
+         /* .one {
+             margin-top: 20px;
+             margin-bottom: 20px;
+         }
+         .two {
+             margin: 20px;
+         } */
+
+         /* 外边距合并 */
+         /* 垂直外边距自动合并
+         .damao {
+             margin-bottom: 200px;
+         }
+
+         .ermao {
+             margin-top: 100px;
+         } */
+
+         /* 嵌套外边距塌陷 */
+         .father {
+             width: 400px;
+             height: 400px;
+             margin: 200px;
+             background-color: blue;
+             /* 0.添加上边框 */
+             /* 1.使用内边距 */
+             /* 2.给父元素添加overflow:hidden,可以避免嵌套外边距塌陷 */
+             
+             overflow: hidden;
+         }
+         .son {
+             width: 200px;
+             height: 200px;
+             margin: 100px;
+             background-color: red;
+         }
+     </style>
+ </head>
+
+ <body>
+     <div class="father">
+         <div class="son">
+
+         </div>
+     </div>
+     <!-- <div class="damao">大毛</div>
+     <div class="ermao">二毛</div>
+     <div class="one">
+         <span>里面的文字</span>
+     </div>
+     <div class="two">
+         2
+     </div> -->
+ </body>
+
+ </html>

@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://www.wren.cn/
+[InternetShortcut]
+URL=http://www.longbing.net/
+Modified=60A355D97056C301BB
+IconFile=http://www.wrclub.net/favicon.ico
+IconIndex=1
+IDList=
+HotKey=0
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

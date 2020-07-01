@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            var mydata = new Date();
+            document.getElementById('currentTime').innerText = mydata.getUTCMilliseconds();
+        }
+        function loadPage() {
+            var targetURL = document.getElementById('url').value;
+            console.log(targetURL);
+            document.getElementById('iframePosition').src = targetURL;
+        }
+    </script>
+
+    <div>
+        <p>请输入要加载的地址: <span id="currentTime"></span></p>
+        <p>
+            <input type="text" name="" id="url" value="www.baidu.com">
+            <input type="button" value="提交" onclick="loadPage()">
+        </p>   
+    </div>
+    <div>
+        <h3>加载标签位置:</h3>
+        <iframe style="width: 100%; height: 500px;" src="" frameborder="1" id="iframePosition"></iframe>
+    </div>
+
+</body>
+</html>

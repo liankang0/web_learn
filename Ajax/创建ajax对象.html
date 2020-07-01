@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function f1(){
+            //1.创建ajax对象
+            //兼容性处理
+            if(typeof ActiveXObject !== 'undefined') {
+                // ie 浏览器
+                var xhr = new ActiveXObject("Msxml2.XMLHTTP.6.0");
+            }else{
+                // 主流浏览器ajax
+                var xhr = new XMLHttpRequest();
+                console.log(xhr)
+
+            }
+            // 1.5 给ajax设置事件，状态变化时触发
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4)
+                {
+                    console.log(xhr.responseText);
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            
+            }
+
+            //2. 发起对服务器的请求
+            //使用open方式（get/post  url)请求
+            xhr.open('get', '1.php');
+            //发送请求
+            xhr.send(null);
+
+            //3. 接收返回信息 responseText属性：以字符串形式接受服务器返回信息
+            /*
+                readyState:
+                    0:刚刚创建ajax对象
+                    1：已经调用open方法
+                    2：已经调用send方法
+                    3：已经返回部分数据
+                    4：请求完成，数据
+                
+            */
+            // if(xhr.readyState==4)
+            // {
+            //     console.log(xhr.responseText);
+            // }
+        }
+        
+        
+        
+
+        
+
+    </script>
+</head>
+<body>
+    <div>
+        <h3>ajax接收服务返回的信息</h3>
+        <input type="button" name="" id="" value="触发" onclick="f1()">
+        <div id="result"></div>
+    </div>
+</body>
+</html>

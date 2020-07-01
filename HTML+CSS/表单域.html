@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>在我们写表单开始要现有一个表单域包含</h1>
+    <form >
+        <label for="nametext">用户名：</label><input type="text" value="请输入用户名" maxlength="6" id="nametext"><br>
+        <!--text 文本框， type 值 password，看不见，input 为单表单-->
+        密码：<input type="password"><br>
+        <!--radio 单选， checkbox多选框·    -->
+        name是input的属性，要有相同的name值才能实现多选1
+        单选按钮和复选框都可以设置checked属性，默认勾选
+        性别：<label for="nan">男</label><input type="radio" name="sex" value="男" checked="checked" id="nan"> <label for="nv">女</label><input type="radio" name="sex" value="女" id="nv"><br>
+        爱好：吃饭<input type="checkbox"> 睡觉<input type="checkbox"> 打豆豆<input type="checkbox" checked="checked"><br>
+        <input type="reset" value="重新填写"> <!--还原表单默认状态-->
+        <input type="submit" value="免费注册"><br>
+
+        普通按钮， 后期搭配js使用
+        <input type="button" value="获取手机验证码"><br>
+        文件与file
+        <br>
+        上传头像： <input type="file">
+
+        select表单元素，多个选择要用户选择，使用下拉列表
+        <select name="" id="" >
+            <option value="江苏">江苏</option>
+            <option value="山东">山东</option>
+            <option value="广东" selected="selected">广东</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10">
+            这个是textarea做的
+        </textarea>
+    </form>
+    <h2>表单标签</h2>
+    <h2>name属性可以区分不同表单，通过name可以查找到属性值</h2>
+    <h2>submit 等于提交按钮，提交表单域中所有的表单数据到后台</h2>
+
+    
+</body>
+</html>

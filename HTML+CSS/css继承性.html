@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  */
+        body {
+            font: 12px/1.5 "Microsoft YaHei";
+        }
+
+        /* 继承性，孩子元素继承父亲 */
+        /* 主要继承color，文字 text font  */
+        div {
+            color: pink;
+            /* 这个1.5是指子元素当前文字1.5倍 ，div 行高是21像素 */
+            font-size: 14px; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>龙生龙凤生凤，老鼠的儿子会打洞</p>
+    </div>
+    <!-- li的文字大小为12px 18像素 -->
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+</html>

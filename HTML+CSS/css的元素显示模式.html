@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 500px;
+            background: rgb(123, 163, 30);
+        }
+
+        div input {
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 块元素和行元素 -->
+
+    <div>
+        比较霸道，自己独占一行
+        高度，宽度都可以之际设置
+        宽度是默认是容器（父级宽度）的100%
+        是一个容器盒子，里面可以放置行或者块元素
+        <!-- 注意：文字容易不能放div ，及<p><div></div></p>  <h1>也不可以放块元素</h1>-->
+    </div>
+    <!-- 行内元素 ，都在一行上-->
+    <span>pink老师</span> <strong>怎么穿品如的衣服</strong>
+    <a href="baidu.com">行内元素都不能再放a元素</a>但是可以放其他元素
+    <div>行内元素高宽设置直接无效</div>
+    <!-- 行内块元素 -->
+    <!-- img  input td -->
+    <!-- 特点可以一行放置多个元素,可以设置块元素的长宽高 -->
+    <div>
+        <input type="text">
+        <input type="text">
+    </div>
+</body>
+
+</html>

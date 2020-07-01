@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择器不同，根据选择器权重 */
+        /* 选择器相同，执行层叠性 */
+        /* 继承的权重为0000 */
+        /* 0001 */
+        div {
+            /* !important权重为无穷大 */
+            color: red !important;
+        }
+
+        /* 0010 */
+        .nav {
+            color: pink;
+        }
+
+        /* 0100 */
+        #demo {
+            color: blue;
+        }
+
+        /* 复合选择器权重的叠加 */
+        /* 0001 */
+        li {
+            color: chartreuse;
+        }
+        /* 0002 */
+        ul li {
+            color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内style权重为1000 -->
+    <div id="demo" class="nav" style="color: blueviolet;">
+        你笑起来真好看
+    </div>
+    <a href="#">a被浏览器专门指定了一个样式</a>
+    <ul>
+        <li>我是小李</li>
+    </ul>
+</body>
+
+</html>

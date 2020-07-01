@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 元素一和元素二用空格隔开，元素一为父亲，元素二为后代，儿子孙子都可以*/
+        ol li {
+            color: red;
+        }
+
+        ol li a {
+            color: blue;
+        }
+
+        .nav li a {
+            color: yellow;
+        }
+
+        /* 子选择器 只能选择某元素的最近一级孩子，必须是亲儿子 */
+        ol>li {
+            font-size: 20px;
+        }
+
+        .ankang ul>a {
+            color: yellowgreen;
+        }
+
+        /* 并集选择器, 使用英文逗号来分割 */
+        div,
+        p,
+        .pig {
+            color: pink;
+        }
+
+        /* 并集选择器要竖着写 */
+        /* 最后一个选择器不用加逗号 */
+
+        /* 伪类选择器---------------------------------- */
+        /* 链接伪类选择器使用冒号（：） */
+        /* 为访问过的链接 */
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 访问过的链接 */
+        a:visited {
+            color: orange;
+        }
+
+        /* 鼠标经过的链接 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* 鼠标正在按下的链接 */
+        a:active {
+            color: green;
+        }
+
+        /* forcus伪类选择器用于选择焦点的选择器 */
+        /* 把获得光标的input选取出来 */
+        input:focus {
+            background-color: pink;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+
+    <a href="#1">小猪佩奇1</a><br>
+    <a href="#3">小猪佩奇2</a><br>
+    <a href="#3">小猪佩奇3</a><br>
+    <a href="#4">小猪佩奇4</a><br>
+    <a href="www.annnnal.com">小猪佩奇5</a><br>
+
+
+
+    <!-- 多个基础选择器组合
+        可以精确选择目标 -->
+    <ol>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li><a href="#">物品</a> 我是ol的孩子</li>
+    </ol>
+    <ul>
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li><a href="#">物品</a> 我是ul的孩子</li>
+    </ul>
+    <ul class="nav">
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li><a href="#">物品</a> 我是ul的孩子</li>
+    </ul>
+    <div class="ankang">
+        <ul class="pig">
+            <a href="#">大肘子</a>
+            <li><a href="#">百度</a></li>
+            <li><a href="#">百度</a></li>
+        </ul>
+    </div>
+    <div>熊大</div>
+    <p>熊二</p>
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+</body>
+
+</html>
