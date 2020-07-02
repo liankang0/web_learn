@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 
+        基于数据的开发方式，代替dom 
+        新增： 生成列表
+              双向绑定
+              绑定事件
+        删除： v-on splice 绑定删除索引的内容
+        统计： list.length
+        清空： list=[]
+        隐藏： 没有数据隐藏标签
+     -->
+</head>
+<body>
+    <!-- 主体区域 -->
+    <section id="todoapp">
+        <!-- 输入框 -->
+        <header>
+            <h1>小康记事本</h1>
+            <input v-model="message" autofocus="autofocus" autocomplete="off" placeholder="请输入任务" class="new-todo" @keyup.enter="add">
+        </header>
+        <!-- 列表区域 -->
+        <section class="main">
+            <ul class="todo-list" v-for= "(item, index) in list" >
+                <li class="todo">
+                    <div class="view">
+                        <span class="index">{{index + 1}}</span>
+                        <label >{{ item }}</label>
+                        <button class="destory" @click="remove(index)"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- 统计和清空 -->
+        <footer class="footer">
+            <span class="todo-count" v-if="list.length!=0">
+                <strong>{{ list.length }}</strong>
+                items left
+            </span>
+            <button v-show="list.length!=0" class="clear-completed" @click="clear">Clear</button>
+
+        </footer>
+    </section>
+    <!-- 底部 -->
+    <footer class="info"></footer>
+
+ 
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#todoapp',
+            data: {
+                list:[
+                    "写代码",
+                    "吃饭饭",
+                    "睡觉觉"
+                ],
+                message: 'hello Vue!',
+                name: "Vue"
+            },
+            methods:{
+                add:function(){
+                    this.list.push(this.message);
+                },
+                remove:function(index){
+                    console.log("删除");
+                    console.log(index);
+                    this.list.splice(index, 1);
+                },
+                clear:function(){
+                    this.list=[];
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

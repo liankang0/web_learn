@@ -22,7 +22,10 @@
         <input type="button" value="v-on简写" @click="dolt">
         <input type="button" value="双击事件" @dbclick="dolt">
         <h2 @click="changeFood">{{ food }}</h2>
-
+        <!--  v-on传参 -->
+        <input type="button" value="事件绑定" v-on:click="chuan('垃圾')">
+        <!--  v-on绑定按键 -->
+        <input type="text" value="键盘使劲按"  @keyup.enter="chuan('垃圾')">
         
     </div>
     
@@ -36,6 +39,9 @@
                 changeFood:function(){
                     this.food += "好好吃！！！";
                     // console.log(this.food);
+                },
+                chuan:function(canshu){
+                    alert(canshu);
                 }
             },
             data:{

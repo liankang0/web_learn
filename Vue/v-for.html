@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Vue/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- v-for 遍历数组 -->
+            <li v-for="(it, index) in arr">
+                {{ index + 1}} 我在：{{ it }}
+            </li>
+            <!-- v-for 遍历数组对象 -->
+            <h2 v-for="item in vegetables">
+                {{ item.name }}
+
+            </h2>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#app",
+            data:{
+                arr:[
+                    "北京",
+                    "上海",
+                    "南京"
+                ],
+                vegetables:[
+                    {name:"西兰花"},
+                    {name:"白菜"}
+                ]
+            },
+            methods:{
+
+            }
+
+        });
+    </script>
+</body>
+</html>

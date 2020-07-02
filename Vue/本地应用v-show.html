@@ -23,6 +23,9 @@
         <img v-bind:src="imgSrc" :title="imgTitle" alt="">
         <!-- v-bind简写方式 -->
         <img :src="imgSrc" :class="isActive?'active':''" @click= "toggleActive" :title="imgTitle+'!!!!!'"  alt="">
+        <!-- active 同上面的三元表达式相同 -->
+        <img :src="imgSrc" :class="{ active:isActive }" @click= "toggleActive" :title="imgTitle+'!!!!!'"  alt="">
+        
     </div>
 
     <script type="text/javascript">

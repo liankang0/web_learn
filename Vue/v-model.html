@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="Vue/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <!-- v-model 双向数据绑定 -->
     <div id="app">
-        {{  message }}
+        <input type="button" value="设置message" @click="setM">
+        <input type="text" v-model="message" @keyup.enter="getM">
+        <h3>
+            {{ message }}
+        </h3>
     </div>
 
     <script type="text/javascript">
@@ -18,6 +22,14 @@
             data: {
                 message: 'hello Vue!',
                 name: "Vue"
+            },
+            methods:{
+                getM:function(){
+                    alert(this.message);
+                },
+                setM:function(){
+                    this.message="小垃圾";
+                }
             }
 
         });

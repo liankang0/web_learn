@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        img {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img src="images/bx-caret-up-circle.svg" alt="" v-show="index != 0" @click="prev">
+        <img :src="imgArr[index]" alt="">
+        <img src="images/bx-caret-down-circle.svg" alt="" v-show="index != 7" @click="next">
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:"#app",
+
+            data:{
+                imgArr:[
+                    "./images/Cartoon/Cartoon1.jpg",
+                    "./images/Cartoon/Cartoon2.jpg",
+                    "./images/Cartoon/Cartoon3.jpg",
+                    "./images/Cartoon/Cartoon4.jpg",
+                    "./images/Cartoon/Cartoon5.jpg",
+                    "./images/Cartoon/Cartoon7.jpg",
+                    "./images/Cartoon/Cartoon6.jpg",
+                    "./images/Cartoon/Cartoon8.jpg"
+                ],
+                index:0
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                    console.log(this.index);
+                },
+                next:function(){
+                    this.index++;
+                    console.log(this.index);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
