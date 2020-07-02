@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-text -->
+        <h2 v-text="message + '!'">江苏</h2>
+        <h2>镇江{{ message + "!" }}江苏</h2>
+        <h2 v-text="info">江苏</h2>
+
+        <!-- v-html --设置为innerHTML -->
+        <h2 v-text="content"></h2>
+        <h2 v-html="content"></h2>
+
+        <!-- v-on 为元素绑定事件 -->
+        <input type="button" value="事件绑定" v-on:click="dolt"> 
+        <input type="button" value="v-on简写" @click="dolt">
+        <input type="button" value="双击事件" @dbclick="dolt">
+        <h2 @click="changeFood">{{ food }}</h2>
+
+        
+    </div>
+    
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            methods:{
+                dolt:function(){
+                    alert("做it");
+                },
+                changeFood:function(){
+                    this.food += "好好吃！！！";
+                    // console.log(this.food);
+                }
+            },
+            data:{
+                message:"小黑你好",
+                info:"江苏镇江",
+                content:"<a href='http://www.baidu.com'>wdnmd</a>",
+                food:"西兰花炒蛋"
+            }
+
+        });
+
+
+    </script>
+</body>
+</html>

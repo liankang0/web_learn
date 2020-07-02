@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .active {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{  message }}
+        <!-- v-show 不显示 -->
+        <input type="button" value="切换图片显示状态"  @click="changeIsShow">
+        <img src="images/红米耳机.png" v-show="isShow" alt="">
+        <!-- v-if 标签消失,移除dom -->
+        <p v-if="isShow" >我是一个p标签</p>
+        <!--  v-bind 设置元素属性 -->
+        <img v-bind:src="imgSrc" :title="imgTitle" alt="">
+        <!-- v-bind简写方式 -->
+        <img :src="imgSrc" :class="isActive?'active':''" @click= "toggleActive" :title="imgTitle+'!!!!!'"  alt="">
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello Vue!',
+                name: "Vue",
+                isShow: false,
+                imgSrc: "images/红米耳机.png",
+                imgTitle: "红米耳机",
+                isActive: false
+
+            },
+            methods:{
+                changeIsShow:function(){
+                    console.log("change");
+                    this.isShow = !this.isShow;
+                },
+                toggleActive:function() {
+                    this.isActive = !this.isActive;
+                }
+            }
+
+
+        });
+    </script>
+</body>
+</html>

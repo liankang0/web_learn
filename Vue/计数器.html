@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        div {
+            padding: center center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="-" @click="sub">
+        <span>{{ num }}</span>
+        <input type="button" value="+" @click="add">
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 1,
+                
+
+                message: 'hello Vue!',
+                name: "Vue"
+            },
+            methods:{
+                add:function(){
+                    console.log("add");
+                    this.num += 1;
+                },
+                sub:function(){
+                    if(0 == this.num)
+                        alert("已经是'0'了，不能再减了");
+                    else{
+                        console.log("sub");
+                        this.num -= 1;
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
