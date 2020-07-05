@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+        <li><a href="#4">4</a></li>    
+
+    </ul>
+
+    <div id="container">
+
+    </div>
+
+
+    <script>
+        // hash值变化时，触发该事件
+            window.onhashchange = function(){
+                var hash = location.hash;
+                var div = document.getElementById("container");
+                console.log(hash);
+                hash = hash.replace('#', '');
+                switch(hash){
+                    case '1': 
+                        div.innerText = "111111";
+                        break;
+                    case '2': 
+                        div.innerText = "222222";
+                        break;
+                    case '3': 
+                        div.innerText = "333333";
+                        break;
+                    case '4': 
+                        div.innerText = "444444";
+                        break;
+                    default:
+                        break;    
+                }
+            }
+    </script>
+</body>
+</html>
